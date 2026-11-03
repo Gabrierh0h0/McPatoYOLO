@@ -7,7 +7,7 @@ import { slides, CLASS_COLOR } from './slides.js';
 import { drawChart } from './charts.js';
 import { initDemo } from './demo.js';
 
-const VER = 7;
+const VER = 8;
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s) => document.querySelector(s);
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));

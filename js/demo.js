@@ -3,6 +3,7 @@ const NAMES = ['100_k', '10_k', '20_k', '2_k', '50_k', '5_k'];
 const VALUE = { '100_k': 100000, '10_k': 10000, '20_k': 20000, '2_k': 2000, '50_k': 50000, '5_k': 5000 };
 const COLOR = { '2_k': '#4f8fdc', '5_k': '#f08a2c', '10_k': '#3f7ae0', '20_k': '#3ec46d', '50_k': '#8b5cf6', '100_k': '#e8b923' };
 const ORT_URL = 'https://cdn.jsdelivr.net/npm/onnxruntime-web@1.20.1/dist/';
+const CONF = 0.25; // umbral por defecto de predict en Ultralytics
 let sessionPromise = null;
 
 function loadOrt() {
@@ -45,7 +46,6 @@ export function initDemo(root) {
     <div class="demo-side">
       <div class="demo-actions"><label class="btn primary">Subir imagen<input type="file" accept="image/*" hidden></label>
         <button class="btn" type="button" data-sample>Probar con un ejemplo</button></div>
-      <label class="demo-conf">Umbral de confianza <output>0,40</output><input type="range" min="0.2" max="0.9" step="0.05" value="0.4"></label>
       <p class="demo-status" role="status">El modelo se carga al elegir una imagen (9,4 MB).</p>
       <ul class="demo-list"></ul><p class="demo-total"></p></div></div>`;
   const $ = (s) => root.querySelector(s);
@@ -89,7 +89,7 @@ export function initDemo(root) {
   }
   function redraw() {
     if (!last) return;
-    paint(decode(last.data, parseFloat($('input[type=range]').value), last.sc, last.px, last.py));
+    paint(decode(last.data, CONF, last.sc, last.px, last.py));
   }
   function setImage(src) {
     const im = new Image(); im.crossOrigin = 'anonymous';
@@ -101,5 +101,4 @@ export function initDemo(root) {
   }
   $('input[type=file]').addEventListener('change', (e) => { const f = e.target.files[0]; if (f) setImage(URL.createObjectURL(f)); });
   $('[data-sample]').addEventListener('click', () => setImage('img/ejemplo-prueba.jpg?v=1'));
-  $('input[type=range]').addEventListener('input', (e) => { $('output').textContent = parseFloat(e.target.value).toFixed(2).replace('.', ','); redraw(); });
 }

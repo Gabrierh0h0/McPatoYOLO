@@ -195,7 +195,7 @@ export const slides = [
   {
     id: 'predicciones', world: E, layout: 'chart',
     title: 'Predicciones sobre imágenes de prueba',
-    body: `<p><b>Codificación.</b> Ocho imágenes del conjunto de prueba elegidas al azar. Cada caja lleva la clase y la confianza, con umbral 0,4.</p>
+    body: `<p><b>Codificación.</b> Ocho imágenes del conjunto de prueba elegidas al azar. Cada caja lleva la clase y la confianza.</p>
            <p><b>Lectura.</b> Estas son detecciones reales de <code>best.pt</code>. Las cajas siguen a los billetes con manos, fondos distintos y encuadres cortados.</p>`,
     figure: { type: 'img', src: 'img/predicciones-test.png', alt: 'Cuadrícula de ocho predicciones del modelo sobre imágenes de prueba' },
     cam: { from: { az: 8, d: 7.4, h: 1.9, look: [-3.0, 1.0, ext(8)] }, to: { az: -8, d: 6.8, h: 1.8, look: [-3.0, 1.0, ext(8)] } },
