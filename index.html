@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Detección de billetes con YOLO26n</title>
+<meta name="description" content="Detector de billetes colombianos con YOLO26n: datos, entrenamiento, resultados y demostración en el navegador.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Prompt:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=4">
+<script type="importmap">
+{ "imports": {
+  "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+  "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
+} }
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body class="locked" data-layout="text">
+<canvas id="gl" aria-hidden="true"></canvas>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div id="fade" aria-hidden="true"></div>
+<div id="scroller" aria-hidden="true"></div>
+
+<main id="stage">
+  <section id="panel" aria-live="polite"></section>
+  <section id="figure" hidden></section>
+</main>
+
+<nav id="hud" hidden aria-label="Navegación">
+  <div id="progress"><i></i></div>
+  <div class="hud-btns">
+    <button id="prev" type="button" class="btn" aria-label="Diapositiva anterior">Anterior</button>
+    <button id="next" type="button" class="btn primary" aria-label="Diapositiva siguiente">Siguiente</button>
+  </div>
+</nav>
+
+<div id="intro">
+  <div class="intro-art" aria-hidden="true">
+    <div class="coin c1"><span>$</span></div>
+    <div class="coin c2"><span>$</span></div>
+    <div class="coin c3"><span>$</span></div>
+    <div class="note n1"></div>
+    <div class="note n2"></div>
+    <div class="scan"></div>
+  </div>
+  <div class="intro-copy">
+    <h1>Detección de billetes colombianos con YOLO26n</h1>
+    <p>Introducción a AI</p>
+    <button id="intro-next" type="button" class="btn primary big">Siguiente</button>
+    <p class="hint">También funciona con clic, flecha derecha o la rueda del mouse</p>
+  </div>
+</div>
+
+<div id="loader" role="status"><p>Cargando escenas</p><div class="bar"><i></i></div></div>
+
+<noscript><p class="nojs">Esta presentación necesita JavaScript.</p></noscript>
+<script type="module" src="js/main.js?v=4"></script>
+</body>
+</html>
