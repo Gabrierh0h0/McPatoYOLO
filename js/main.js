@@ -7,7 +7,7 @@ import { slides, CLASS_COLOR } from './slides.js';
 import { drawChart } from './charts.js';
 import { initDemo } from './demo.js';
 
-const VER = 6;
+const VER = 7;
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s) => document.querySelector(s);
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -202,7 +202,7 @@ function drawDetections(active, world) {
   const W = innerWidth, H = innerHeight, dpr = fx.width / W;
   fctx.setTransform(dpr, 0, 0, dpr, 0, 0); fctx.clearRect(0, 0, W, H);
   if (introOpen) return;
-  fctx.font = '600 12px "Prompt", system-ui, sans-serif'; fctx.textBaseline = 'middle';
+  fctx.font = '600 12px "Fredoka", system-ui, sans-serif'; fctx.textBaseline = 'middle';
   for (const a of actors) {
     if (!a.def.det || !a.root.visible || a.idx < active - 0 || a.idx > active) continue;
     const skinned = a.def.m === 'kh2' || a.def.m === 'car';
@@ -223,18 +223,20 @@ function drawDetections(active, world) {
 // ---------- paneles ----------
 const panel = $('#panel'), figure = $('#figure');
 let shownIdx = -1;
-function tableHTML(t) { return `<table><thead><tr>${t.head.map((h) => `<th>${h}</th>`).join('')}</tr></thead><tbody>${t.rows.map((r) => `<tr>${r.map((c, i) => `<td${i ? ' class="n"' : ''}>${c}</td>`).join('')}</tr>`).join('')}</tbody></table>`; }
+function tableHTML(t) { return `<div class="card"><table><thead><tr>${t.head.map((h) => `<th>${h}</th>`).join('')}</tr></thead><tbody>${t.rows.map((r) => `<tr>${r.map((c, i) => `<td${i ? ' class="n"' : ''}>${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`; }
 async function showSlide(i) {
   if (i === shownIdx) return; shownIdx = i; const s = slides[i];
   document.body.dataset.layout = s.layout; document.body.dataset.slide = s.id;
   panel.innerHTML = `<h2>${s.title}</h2><div class="rule"></div>${s.body ? `<div class="copy">${s.body}</div>` : ''}${s.table ? tableHTML(s.table) : ''}`;
   panel.classList.toggle('final', !!s.final);
+  panel.querySelectorAll('h2').forEach((h) => { h.innerHTML = h.textContent.split(' ').map((w, k) => `<span class="w" style="--i:${k}">${w}</span>`).join(' '); });
   figure.innerHTML = ''; figure.hidden = !s.figure && !s.demo;
   if (s.figure?.type === 'img') figure.innerHTML = `<img src="${s.figure.src}?v=${VER}" alt="${s.figure.alt}" decoding="async">`;
   else if (s.figure?.type === 'chart') { figure.innerHTML = '<div class="chart"></div>'; figure.querySelector('.chart').innerHTML = await drawChart(s.figure.chart); }
   else if (s.demo) { figure.innerHTML = '<div class="demo-root"></div>'; initDemo(figure.querySelector('.demo-root')); }
   if (!RM && window.gsap) {
-    gsap.fromTo(panel, { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.5, ease: 'power2.out' });
+    gsap.from(panel.querySelectorAll('h2 .w'), { y: 40, rotate: -8, opacity: 0, scale: 0.7, duration: 0.7, stagger: 0.07, ease: 'back.out(2.2)' });
+    gsap.from(panel.querySelectorAll('.copy > *, .card'), { y: 22, opacity: 0, duration: 0.6, stagger: 0.12, delay: 0.25, ease: 'power2.out' });
     if (!figure.hidden) gsap.fromTo(figure, { y: 18, opacity: 0 }, { y: 0, opacity: 1, duration: 0.55, delay: 0.08, ease: 'power2.out' });
   }
   $('#prev').disabled = i === 0; $('#next').disabled = i === slides.length - 1;

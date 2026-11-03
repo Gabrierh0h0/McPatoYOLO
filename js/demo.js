@@ -55,7 +55,7 @@ export function initDemo(root) {
   function paint(dets) {
     const W = canvas.width, H = canvas.height;
     ctx.clearRect(0, 0, W, H); ctx.drawImage(img, 0, 0, W, H);
-    const fs = Math.max(13, Math.round(W / 46)); ctx.font = `600 ${fs}px Prompt, system-ui, sans-serif`; ctx.lineWidth = Math.max(2, W / 320);
+    const fs = Math.max(13, Math.round(W / 46)); ctx.font = `600 ${fs}px Fredoka, system-ui, sans-serif`; ctx.lineWidth = Math.max(2, W / 320);
     const sx = W / img.naturalWidth, sy = H / img.naturalHeight;
     dets.forEach((d) => {
       const n = NAMES[d.c], x = d.x1 * sx, y = d.y1 * sy, w = (d.x2 - d.x1) * sx, h = (d.y2 - d.y1) * sy, col = COLOR[n];
