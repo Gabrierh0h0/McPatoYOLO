@@ -102,8 +102,7 @@ export const slides = [
     cam: { from: { az: -22, d: 9.5, h: 2.6, look: [0.6, 1.0, ext(0) - 2] }, to: { az: 6, d: 8.0, h: 2.0, look: [0.6, 1.0, ext(0) - 2] } },
     cast: [
       { m: 'car', p: [1.0, 0, ext(0) - 2.6], ry: 4, anim: 'drive', len: 4.4, enter: { from: [1.0, ext(0) + 22] }, det: { c: 'vehículo', p: 0.95 } },
-      { m: 'kh2', p: [-1.5, 0, ext(0) + 0.6], ry: -25, anim: 'talk_a', h: 1.6, det: { c: 'personaje', p: 0.97 } },
-      { m: 'bag', p: [-9.0, 0, ext(0) - 3], ry: 10, h: 6.0, anim: 'spin', det: { c: 'bolsa', p: 0.92 } },
+      { m: 'bag', p: [-1.8, 0, ext(0) - 1.2], ry: 10, h: 1.5, anim: 'spin', det: { c: 'bolsa', p: 0.92 } },
     ],
   },
   {
@@ -114,7 +113,7 @@ export const slides = [
     cam: { from: { az: 18, d: 8.5, h: 2.2, look: [-1.5, 1.0, ext(1)] }, to: { az: -10, d: 7.2, h: 1.9, look: [-1.5, 1.0, ext(1)] } },
     cast: [
       { m: 'kh2', p: [-1.6, 0, ext(1)], ry: 22, anim: 'think', h: 1.6, det: { c: 'personaje', p: 0.96 } },
-      { m: 'case', p: [-8.5, 0, ext(1) - 2], ry: 40, h: 5.0, anim: 'spin', det: { c: 'maletín', p: 0.91 } },
+      { m: 'case', p: [-5.6, 0, ext(1) - 2], ry: 40, h: 1.5, anim: 'spin', det: { c: 'maletín', p: 0.91 } },
       { m: 'stack', p: [-3.4, 0, ext(1) + 0.4], d: '10k', w: 1.0, ry: 14, det: { c: '10_k', p: 0.94 }, ground: true },
     ],
   },
@@ -127,7 +126,7 @@ export const slides = [
     cam: { from: { az: -8, d: 7.6, h: 1.9, look: [-3.0, 1.0, ext(2)] }, to: { az: 6, d: 7.0, h: 1.8, look: [-3.0, 1.0, ext(2)] } },
     cast: [
       { m: 'kh2', p: [-3.2, 0, ext(2) + 0.4], ry: 24, anim: 'talk_b', h: 1.5, det: { c: 'personaje', p: 0.95 } },
-      { m: 'car', p: [-6.2, 0, ext(2) - 1.4], ry: 70, anim: 'idle', len: 4.2, det: { c: 'vehículo', p: 0.93 } },
+      { m: 'case', p: [-6.0, 0, ext(2) - 1.4], ry: 30, h: 1.5, anim: 'spin', det: { c: 'maletín', p: 0.93 } },
     ],
   },
   {
@@ -139,7 +138,7 @@ export const slides = [
     cam: { from: { az: 8, d: 7.4, h: 1.9, look: [-3.0, 1.0, ext(3)] }, to: { az: -8, d: 6.8, h: 1.7, look: [-3.0, 1.0, ext(3)] } },
     cast: [
       { m: 'kh2', p: [-3.0, 0, ext(3) + 0.2], ry: 22, anim: 'point', h: 1.5, det: { c: 'personaje', p: 0.96 } },
-      { m: 'bag', p: [-7.6, 0, ext(3) - 2], ry: -15, h: 4.4, anim: 'spin', det: { c: 'bolsa', p: 0.9 } },
+      { m: 'bag', p: [-5.6, 0, ext(3) - 2], ry: -15, h: 1.5, anim: 'spin', det: { c: 'bolsa', p: 0.9 } },
     ],
   },
   {
@@ -153,8 +152,8 @@ export const slides = [
     cam: { from: { az: -12, d: 8.6, h: 2.4, look: [0.5, 1.2, ext(4)] }, to: { az: 12, d: 7.8, h: 2.1, look: [0.5, 1.2, ext(4)] } },
     cast: [
       { m: 'kh2', p: [-1.2, 0, ext(4) + 0.6], ry: 14, anim: 'laugh', h: 1.6, det: { c: 'personaje', p: 0.97 } },
-      { m: 'car', p: [3.0, 0, ext(4) - 1.2], ry: -30, anim: 'idle', len: 4.2, det: { c: 'vehículo', p: 0.94 } },
-      { m: 'case', p: [-8.5, 0, ext(4) - 3], ry: 35, h: 5.2, anim: 'spin', det: { c: 'maletín', p: 0.9 } },
+      { m: 'bag', p: [3.2, 0, ext(4) - 1.2], ry: -30, h: 1.5, anim: 'spin', det: { c: 'bolsa', p: 0.94 } },
+      { m: 'case', p: [-5.6, 0, ext(4) - 3], ry: 35, h: 1.5, anim: 'spin', det: { c: 'maletín', p: 0.9 } },
     ],
   },
   {
@@ -166,7 +165,7 @@ export const slides = [
     cam: { from: { az: -8, d: 7.4, h: 1.9, look: [-3.0, 1.0, ext(5)] }, to: { az: 7, d: 6.8, h: 1.8, look: [-3.0, 1.0, ext(5)] } },
     cast: [
       { m: 'kh2', p: [-3.1, 0, ext(5) + 0.4], ry: 22, anim: 'talk_a', h: 1.5, det: { c: 'personaje', p: 0.96 } },
-      { m: 'bag', p: [-7.8, 0, ext(5) - 2], ry: 25, h: 4.2, anim: 'spin', det: { c: 'bolsa', p: 0.92 } },
+      { m: 'bag', p: [-5.6, 0, ext(5) - 2], ry: 25, h: 1.5, anim: 'spin', det: { c: 'bolsa', p: 0.92 } },
     ],
   },
   {
@@ -178,7 +177,7 @@ export const slides = [
     cam: { from: { az: 7, d: 7.4, h: 1.9, look: [-3.0, 1.0, ext(6)] }, to: { az: -8, d: 6.8, h: 1.8, look: [-3.0, 1.0, ext(6)] } },
     cast: [
       { m: 'kh2', p: [-3.0, 0, ext(6) + 0.3], ry: 20, anim: 'think', h: 1.5, det: { c: 'personaje', p: 0.96 } },
-      { m: 'car', p: [-6.4, 0, ext(6) - 1.6], ry: 60, anim: 'idle', len: 4.2, det: { c: 'vehículo', p: 0.93 } },
+      { m: 'case', p: [-6.2, 0, ext(6) - 1.6], ry: 60, h: 1.5, anim: 'spin', det: { c: 'maletín', p: 0.93 } },
     ],
   },
   {
@@ -190,7 +189,7 @@ export const slides = [
     cam: { from: { az: -8, d: 7.4, h: 1.9, look: [-3.0, 1.0, ext(7)] }, to: { az: 8, d: 6.8, h: 1.8, look: [-3.0, 1.0, ext(7)] } },
     cast: [
       { m: 'kh2', p: [-3.0, 0, ext(7) + 0.3], ry: 22, anim: 'point', h: 1.5, det: { c: 'personaje', p: 0.96 } },
-      { m: 'case', p: [-8.0, 0, ext(7) - 2], ry: -30, h: 4.4, anim: 'spin', det: { c: 'maletín', p: 0.9 } },
+      { m: 'case', p: [-5.6, 0, ext(7) - 2], ry: -30, h: 1.5, anim: 'spin', det: { c: 'maletín', p: 0.9 } },
     ],
   },
   {
@@ -202,7 +201,7 @@ export const slides = [
     cam: { from: { az: 8, d: 7.4, h: 1.9, look: [-3.0, 1.0, ext(8)] }, to: { az: -8, d: 6.8, h: 1.8, look: [-3.0, 1.0, ext(8)] } },
     cast: [
       { m: 'kh2', p: [-3.0, 0, ext(8) + 0.3], ry: 22, anim: 'surprise', h: 1.5, det: { c: 'personaje', p: 0.95 } },
-      { m: 'bag', p: [-7.8, 0, ext(8) - 2], ry: 15, h: 4.2, anim: 'spin', det: { c: 'bolsa', p: 0.9 } },
+      { m: 'bag', p: [-5.6, 0, ext(8) - 2], ry: 15, h: 1.5, anim: 'spin', det: { c: 'bolsa', p: 0.9 } },
     ],
   },
   {
@@ -212,7 +211,7 @@ export const slides = [
     cam: { from: { az: -8, d: 7.4, h: 1.9, look: [-3.0, 1.0, ext(9)] }, to: { az: 8, d: 6.8, h: 1.8, look: [-3.0, 1.0, ext(9)] } },
     cast: [
       { m: 'kh2', p: [-3.0, 0, ext(9) + 0.3], ry: 22, anim: 'wave', h: 1.5, det: { c: 'personaje', p: 0.96 } },
-      { m: 'car', p: [-6.2, 0, ext(9) - 1.6], ry: 65, anim: 'idle', len: 4.2, det: { c: 'vehículo', p: 0.93 } },
+      { m: 'bag', p: [-6.0, 0, ext(9) - 1.6], ry: 65, h: 1.5, anim: 'spin', det: { c: 'bolsa', p: 0.93 } },
     ],
   },
   {
@@ -222,8 +221,8 @@ export const slides = [
     cam: { from: { az: -18, d: 8.4, h: 2.3, look: [1.0, 1.1, ext(10)] }, to: { az: 8, d: 7.4, h: 2.0, look: [1.0, 1.1, ext(10)] } },
     cast: [
       { m: 'kh2', p: [1.2, 0, ext(10)], ry: -18, anim: 'laugh', h: 1.6, det: { c: 'personaje', p: 0.97 } },
-      { m: 'bag', p: [4.4, 0, ext(10) - 2], ry: -20, h: 1.4, anim: 'spin', det: { c: 'bolsa', p: 0.93 } },
-      { m: 'case', p: [-9.0, 0, ext(10) - 3], ry: 38, h: 5.4, anim: 'spin', det: { c: 'maletín', p: 0.9 } },
+      { m: 'bag', p: [4.4, 0, ext(10) - 2], ry: -20, h: 1.5, anim: 'spin', det: { c: 'bolsa', p: 0.93 } },
+      { m: 'case', p: [-5.6, 0, ext(10) - 3], ry: 38, h: 1.5, anim: 'spin', det: { c: 'maletín', p: 0.9 } },
     ],
   },
   {
@@ -234,7 +233,7 @@ export const slides = [
     cast: [
       { m: 'kh2', p: [-1.4, 0, ext(11)], ry: 20, anim: 'think', h: 1.6, det: { c: 'personaje', p: 0.96 } },
       { m: 'stack', p: [-3.6, 0, ext(11) + 0.4], d: '100k', w: 1.1, ry: 18, det: { c: '100_k', p: 0.9 }, ground: true },
-      { m: 'bag', p: [-9.0, 0, ext(11) - 2.5], ry: 10, h: 5.4, anim: 'spin', det: { c: 'bolsa', p: 0.9 } },
+      { m: 'bag', p: [-5.6, 0, ext(11) - 2.5], ry: 10, h: 1.5, anim: 'spin', det: { c: 'bolsa', p: 0.9 } },
     ],
   },
   {
@@ -244,7 +243,7 @@ export const slides = [
     cam: { from: { az: -28, d: 9.5, h: 2.4, look: [0.0, 1.0, ext(12) - 3] }, to: { az: 10, d: 8.2, h: 2.0, look: [0.0, 1.0, ext(12) - 7] } },
     cast: [
       { m: 'car', p: [0.4, 0, ext(12) - 8], ry: 0, anim: 'drive', len: 4.6, enter: { from: [0.4, ext(12) + 14] }, det: { c: 'vehículo', p: 0.96 }, carry: { m: 'bag', h: 1.0 } },
-      { m: 'bag', p: [-10.5, 0, ext(12) - 6], ry: 20, h: 8, anim: 'spin', det: { c: 'bolsa', p: 0.93 } },
+      { m: 'bag', p: [-7.0, 0, ext(12) - 6], ry: 20, h: 2.2, anim: 'spin', det: { c: 'bolsa', p: 0.93 } },
     ],
   },
 ];

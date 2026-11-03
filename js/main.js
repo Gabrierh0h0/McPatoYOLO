@@ -7,7 +7,7 @@ import { slides, CLASS_COLOR } from './slides.js';
 import { drawChart } from './charts.js';
 import { initDemo } from './demo.js';
 
-const VER = 4;
+const VER = 6;
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const $ = (s) => document.querySelector(s);
 const clamp = (v, a, b) => Math.min(b, Math.max(a, v));
@@ -292,7 +292,7 @@ function frame() {
   const W = innerWidth, H = innerHeight;
   camera.setViewOffset(W, H, -camState.sx * W, -camState.sy * H, W, H);
   for (const a of actors) {
-    const near = (a.idx === idx || (a.idx === idx + 1 && t > 0.8) || (a.idx === idx - 1 && t < 0.2)) && slides[a.idx].world === currentWorld;
+    const near = a.idx === idx && slides[a.idx].world === currentWorld;
     a.root.visible = near; if (!near) continue;
     const tt = a.idx === idx ? t : (a.idx < idx ? 1 : 0);
     if (a.mixer && !RM) a.mixer.update(dt);
